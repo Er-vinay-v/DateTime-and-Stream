@@ -1,0 +1,127 @@
+﻿Assignment Solutions
+
+
+1.program to display current date and time in java.
+Import java.time.*;
+class Date_Time_Demo{
+public static void main(String[] argos){
+LocalDate d=LocalDate.now();
+System.out.println(d);
+LocalTime t=LocalTime.now();
+System.out.println(t);
+}
+}
+
+
+Output:-
+Local date : 2024-05-08
+Local time : 2024-05-08T20:04:43.936784
+
+
+
+
+2.Write a program to convert a date to a string in the format "MM/dd/yyyy".
+import java.time.format.DateTimeFormatter;
+class CustomDateTime
+{
+public static void main(String[] argos){
+
+
+LocalDate date = LocalDate.of(2023, 4, 4);
+DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+String formattedDate = date.format(formatter);
+System.out.println("Format date: " + formattedDate);
+}
+}
+
+
+3.What is the difference between collections and streams?Explain with an Example.
+Ans : The differences between collections and Stream is→
+
+
+Collections
+	Streams
+	1.Collections are mainly used to store and group the data
+	Streams are mainly used to perform operations on data. 
+	2.You can add or remove elements from collections. 
+	You can’t add or remove elements from streams. 
+	3.Collections have to be iterated externally.
+	Streams are internally iterated. 
+	4.Collections can be traversed multiple times. 
+	Streams are traversable only once. 
+	Ex : List, Set, Map… 
+	Ex : filtering, mapping, matching
+	
+
+
+
+Example Collection:-
+
+
+Import java.util.*;
+Import java.io.*;
+class CollectionExample{
+public static main(String[] argos){
+
+
+List<Integer>list=Arrays.asList(1,2,3,4,5,6,7,8);
+Iterator itr=list.iterator();
+while(itr.hashNext()){
+System.out.print(next()+” “ );
+}
+
+
+}
+
+
+Example Stream :-
+
+
+class StreamDemo{
+public static void main(String[] argos){
+
+
+List<Integer>list=Arrays.asList(1 ,2,3,4,5,6,7,8,9);
+
+
+Stream<Integer>str=list.sorted().filter(a->a%2!=0).map(a->a*2).forEach(System.out::println);
+
+
+}
+}
+
+
+4.What are enums in java? explain with an example.
+Ans : We can use enum to define a group of named constants.Enums are used to represent a collection of related constants that have a common purpose. Each constant in an enum is an instance of the enum type, and they are typically defined as public static final fields.Here's an example of how to define an enum in Java.
+
+
+enum Months{
+JAN,FEB,MAR,APR
+}
+class Demo{
+public static void main(String[] argos){
+Months m=Months.JAN;
+System.out.println(m);
+System.out.println(Months.MAR);
+}
+}
+
+
+Output:-
+JAN
+MAR
+
+
+5.What are the annotations in java?
+Ans:built-in annotations in Java:
+@Override
+@Deprecated
+@SuppressWarnings
+@FunctionalInterface
+@Retention
+@Target
+@Documented
+@Inherited
+These built-in annotations in Java are used to provide additional information to the Java compiler and other
+tools. They help improve code readability, maintainability, and safety by enforcing specific rules and behaviours
+in Java code.
